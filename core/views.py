@@ -15,3 +15,9 @@ def r(request,start,stop):
     return render(request,'r.html',{
         'rr': rr,
     })
+
+def tag_test(request):
+    ll = [1,2,3,4,5,6,7,8]
+    return render(request,'tag_test.html',{
+        'll': ll,
+    })
