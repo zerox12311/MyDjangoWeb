@@ -26,7 +26,11 @@ urlpatterns = [
     path('tag_test/', tag_test),
     path('admin/', admin.site.urls),
 
-    path('posts/', views.Index,name ='posts'),
+    path('posts/', views.Index, name ='posts'),
+    path('posts/new/', views.New, name ='posts_new'),    
     path('posts/<int:pk>/', views.show, name='posts_show'),
+    path('posts/edit/<int:pk>/', views.edit, name='posts_edit'),
+    path('posts/delete/<int:pk>/', views.delete, name='posts_delete')
+    
     
 ]
