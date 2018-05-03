@@ -24,7 +24,7 @@ def New(request):
     form = PostModelForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('posts')
+        return redirect('posts:')
     return render(request,'posts/new.html',{
         'form':form
     })
@@ -34,7 +34,7 @@ def edit(request, pk):
     form = PostModelForm(request.POST or None,instance=post)
     if form.is_valid():
         form.save()
-        return redirect('posts')
+        return redirect('posts:')
     return render(request,'posts/edit.html',{
         'form':form
     })
@@ -42,7 +42,7 @@ def edit(request, pk):
 def delete(request, pk):
     post = get_object_or_404(Post,pk=pk)
     post.delete()
-    return redirect('posts')
+    return redirect('posts:')
 
 def show(request, pk):
     # post = Post.objects.get(pk = pk)

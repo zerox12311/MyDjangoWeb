@@ -1,14 +1,8 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-
-
-
-
-<div class="container">
-    <h1>Edit Item</h1>
-    <form action="" method="post">
-        {% csrf_token %}
-        <!-- <div class="form-group">
+{% extends "layout.html" %} {% block main%}
+<h1>Edit Item</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <!-- <div class="form-group">
             <label for="Title">Title</label>
             <input type="text" class="form-control" name="title" id="Title" aria-describedby="titleHelp" placeholder="Enter title">
             <small id="titleHelp" class="form-text text-muted">This is title</small>
@@ -18,8 +12,8 @@
             <input type="text" class="form-control" name="content" id="content" placeholder="Enter content">
         </div> -->
 
-        {{ form.as_p }}
+    {{ form.as_p }}
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
